@@ -1,7 +1,7 @@
 public class Main7 {
     public static void main(String[] args) {
-        String name ="山田";
-        String surName ="太郎";
+        String firstName ="山田";
+        String lastName ="太郎";
         String age = "16歳";
         String mail ="yamada@example.com";
         
