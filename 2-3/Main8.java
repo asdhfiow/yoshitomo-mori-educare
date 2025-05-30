@@ -4,8 +4,9 @@ public class Main8 {
         String name =" 山田太郎";//名前（変数名：name 型：String）
         String homeTown ="東京都";//出身地（変数名:homeTown 型：String）
         String food ="カレーライス";//好きな食べもの(変数名:food 型；String) 
-
+        String biografy = "===== 自己紹介 =====";
     /**以下、System.out.printlnで変数名と文字列出力 */
+        System.out.println(biografy);
         System.out.println("名前:" + name);
         System.out.println("出身地:" + homeTown);
         System.out.println("好きな食べ物:" + food);
