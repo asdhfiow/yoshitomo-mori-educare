@@ -1,6 +1,15 @@
-public class Main3 {/**Main3という名前のクラス */
-    public static void main (String args[]){
-        System.out.println("Hello, World!");/*System.out.prinlnでHello,Wordl!という文字列を出力*/
+/**
+ * Main3 クラスは Java アプリケーションのエントリーポイントとなるクラスです。
+ * このクラスの main メソッドを実行すると、コンソールに "Hello, World!" と表示されます。
+ */
+public class Main3 {
+    public static void main(String[] args) {
+        /*
+         * プログラムの動作説明：
+         * 1. プログラムの実行が開始されると main メソッドが呼び出される。
+         * 2. System.out.println メソッドを使って "Hello, World!" をコンソールに出力する。
+         */
+        
+        System.out.println("Hello, World!"); // コンソールにHello, World!を表示
     }
-//public static void main (String args[]){}これはjavaでプログラムの実行が最初に始まる場所（エントリーポイント）
 }
