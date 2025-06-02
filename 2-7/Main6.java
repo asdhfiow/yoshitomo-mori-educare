@@ -8,7 +8,7 @@ public class Main6{
         String input = scanner.nextLine();
 
         int currentExp = Integer.parseInt(input);
-        int bonusExp = (int)(currentExp * 0.25);
+        int bonusExp = (int)(currentExp * 1.25);
         int totalExp = currentExp + bonusExp;
 
         System.out.println("ボーナス後の経験値：" + totalExp);
