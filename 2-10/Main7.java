@@ -14,8 +14,7 @@ public class Main7 {
             case "1-3": {
                 System.out.println("C");
             }break;
-        }
-        switch (combo){
+      
             case "2-1":{
                 System.out.println("D");
             }break;
