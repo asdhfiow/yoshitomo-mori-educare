@@ -8,7 +8,7 @@ public class Main3 {
             System.out.println("夏");
          } else if (month >= 9 && month <= 11) {
             System.out.println("秋");
-         } else if (month >= 2 && month <= 12) {
+         } else if (month == 12 || month == 1 || month == 2) {
             System.out.println("冬");
          } else {
             System.out.println("無効な月です");
