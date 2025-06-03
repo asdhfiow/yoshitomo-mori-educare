@@ -11,21 +11,19 @@ public class Main7 {
             case "1-2":{
                 System.out.println("B");
             }break;
-            case "1-3": {
+            default: {
                 System.out.println("C");
-            }break;
-      
+            }
+      switch(combo){
             case "2-1":{
                 System.out.println("D");
             }break;
             case "2-2":{
                 System.out.println("E");
             }break;
-            case "2-3": {
-                System.out.println("F");
-            }break;
         default:{
-            System.out.println("Invalid key");
+            System.out.println("F");
+        }
         }
     }
 }
