@@ -1,15 +1,19 @@
-public class Main1{
-    public static void main(String[] args){
+public class Main1 {
+    public static void main(String[] args) {
         int price = 1000;
-        int quantity = 3; 
-        calculateTotal(price,quantity);
-    }
-    
-    public static double calculateTotal(int price, int quantity){
-        System.out.println("商品価格:" + price + "円," + "数量：" + quantity);
-        double result = (price * quantity) * 1.08;
+        int quantity = 3;
 
-        System.out.println("合計金額（税込）：" + (int)result + "円");
-        return result;
+        int total = calculateTotal(price, quantity); 
+        showInfo(price, quantity, total);
+    }
+
+    public static int calculateTotal(int price, int quantity) {
+        double result = (price * quantity) * 1.08;
+        return (int) result;  
+    }
+
+    public static void showInfo(int price, int quantity, int total) {
+        System.out.println("商品価格：" + price + "円, 数量：" + quantity);
+        System.out.println("合計金額（税込）：" + total + "円");
     }
 }
