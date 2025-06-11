@@ -1,10 +1,10 @@
 public class Main2 {
     public static void main(String[] args){
         int score = 85;
-        getScore(score);
+        evaluateGrade(score);
     }
 
-    public static void getScore(int score){
+    public static int evaluateGrade(int score){
         if (score >= 80){
             System.out.println("成績：優");
         }else if(score >= 70){
@@ -14,5 +14,6 @@ public class Main2 {
         }else {
             System.out.println("成績：不可");
         }
+        return score;
     }
 }
