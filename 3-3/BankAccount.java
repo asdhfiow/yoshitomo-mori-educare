@@ -1,3 +1,4 @@
+
 class BankAccount {
 
 int balance;//残高のフィールド
