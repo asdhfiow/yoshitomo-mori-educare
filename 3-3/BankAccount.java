@@ -13,11 +13,11 @@ System.out.println(amount + "円預けました");
 }
 //お金を引き出すメソッド（残高が不足している場合はメッセージを表示）
 void withdrow(int amount){
+if (balance >= amount){
     balance -= amount; //残高から引き出した金額を減算
-if (balance < 0){
-    System.out.println("残高が不足しています");
-}else {
     System.out.println(amount + "円引き出しました");
+}else {
+    System.out.println("残高が不足しています")
 }
 }
 
