@@ -7,7 +7,7 @@ public class BankAccount {
         return balance;
     }
 
-    // 残高を設定するメソッド（初期化用）
+    // 残高を設定するメソッド
     public void setBalance(int amount) {
         this.balance = amount;
     }
