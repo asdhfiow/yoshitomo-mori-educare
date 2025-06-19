@@ -4,7 +4,7 @@ public class Main2 {
         Book book = new Book(); //インスタンスの生成
         
         //java入門を登録しました　と出力
-        book.setTitle(); //タイトルの設定
+        book.setTitle("java入門"); //タイトルの設定
         book.getTitle(); //タイトルの取得
 
 
