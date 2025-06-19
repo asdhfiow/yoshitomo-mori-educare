@@ -8,7 +8,7 @@ public class Book {
         this.title = title;
     }
 
-    // タイトルを取得するメソッド（出力ではなく return）
+    // タイトルを取得するメソッド
     public String getTitle(){
         return this.title;
     }
