@@ -1,35 +1,38 @@
 public class Pet {
-    //フィールド
-    String name;
-    int energy;
+    // フィールド
+    private String name;
+    private int energy;
 
-    //メソッド
-    void setName(){
-        // 名前を設定するメソッド
-        this.name = "ポチ"; // 例として固定の名前を設定
+    // setter
+    public void setName(String name) {
+        this.name = name;
     }
-    void setEnergy(){
-        // エネルギーを設定するメソッド
-        this.energy = 100; // 例として初期エネルギーを100に設定
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
     }
-    void getName(){
-        System.out.println(name + "を生み出しました！");
+
+    // getter
+    public String getName() {
+        return name;
     }
-    void getEnergy(){
-        System.out.println("初期体力：" + energy);
+
+    public int getEnergy() {
+        return energy;
     }
-    void eat() {
+
+    public void eat() {
         energy += 10;
         System.out.println(name + "は食事をして元気になった!");
     }
 
-    void play() {
+    public void play() {
         energy -= 20;
         System.out.println(name + "は遊んで疲れた!");
     }
 
-    void showEnergy() {
+    public void showEnergy() {
         System.out.println("現在の体力：" + energy);
     }
-    
 }
+
