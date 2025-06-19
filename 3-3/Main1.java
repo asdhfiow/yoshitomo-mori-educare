@@ -1,15 +1,18 @@
 public class Main1 {
     public static void main(String[] args){
 
-        Pet pet = new Pet(); //インスタンスの生成
-        pet.name = "ポチ";
-        pet.energy = 100;
+        Pet pet = new Pet(); //インスタンスの生成  
 
-        System.out.println(pet.name + "を生み出しました!");
-        System.out.println("初期体力：" + pet.energy);
+        //初期値の設定
+        pet.setName(); //名前を設定
+        pet.setEnergy(); //エネルギーを設定
 
         //メソッドの呼び出し
-        pet.eat();
-        pet.play();
+        pet.getName();     //名前を設定
+        pet.getEnergy();   //初期体力を表示
+        pet.eat();         //食事をして体力を回復
+        pet.showEnergy();  //体力を表示
+        pet.play();        //遊んで体力を消費
+        pet.showEnergy();  //体力を表示
     }
 }
