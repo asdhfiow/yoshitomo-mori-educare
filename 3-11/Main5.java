@@ -5,7 +5,5 @@ public class Main5 {
         sa.withdraw(3000);
         sa.displayAccountInfo();
 
-        int currentBalance = sa.getBalance();
-        System.out.println("");
     }
 }
