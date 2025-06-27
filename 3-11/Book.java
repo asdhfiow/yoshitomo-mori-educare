@@ -2,7 +2,7 @@ public class Book extends Product{
     String author;
     int stockQuantity;
 
-    Book(String name, String author, int price, int stockQuantity){
+    public Book(String name, String author, int price, int stockQuantity){
         this.name = name;
         this.author = author;
         this.price = price;
