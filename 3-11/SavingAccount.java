@@ -1,7 +1,7 @@
 public class SavingAccount implements BankAccount {
-    String bankAccountName;
-    int balance;
-    String history = "";
+    private String bankAccountName;
+    private int balance;
+    private String history = "";
 
     public SavingAccount(String bankAccountName, int balance) {
         this.bankAccountName = bankAccountName;
@@ -17,8 +17,12 @@ public class SavingAccount implements BankAccount {
 
     @Override
     public void withdraw(int amount) {
-        balance -= amount;
-        history += "出金: " + amount + "\n";
+        if (balance >= amount) {
+            balance -= amount;
+            history += "出金: " + amount + "\n";
+        } else {
+            history += "出金失敗: 残高不足\n";
+        }
     }
 
     @Override
