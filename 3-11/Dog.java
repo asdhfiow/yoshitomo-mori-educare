@@ -1,4 +1,4 @@
-class Dog implements Animal{
+public class Dog implements Animal{
     String name;
     int age;
     
@@ -8,7 +8,7 @@ class Dog implements Animal{
     public void eat(){
         System.out.println(name + "が餌を食べています");
     }
-    Dog(String name, int age){
+    public Dog(String name, int age){
         this.name = name;
         this.age = age;
     }
