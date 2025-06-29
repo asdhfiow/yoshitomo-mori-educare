@@ -16,10 +16,10 @@ public class BankAccount {
     }
     // 出金　残高不足の場合は、出金不可
     public void withdraw(int amount){
-        balance -= amount;
         if (balance < amount){
             System.out.println("引き出しに失敗しました。残高が不足しています。");
         }else {
+            balance -= amount;
             System.out.println(amount + "円引き出しました");
         }
     
