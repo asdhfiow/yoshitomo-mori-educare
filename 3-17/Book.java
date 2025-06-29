@@ -4,7 +4,7 @@ public class Book {
 
     public Book(String title, boolean isLent){
         this.title = title;
-        this.isLent = false;
+        this.isLent = isLent;
     }
 
     // タイトル取得用getterメソッド
