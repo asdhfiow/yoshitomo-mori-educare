@@ -7,12 +7,12 @@ public class Product {
         this.stock = stock;
     }
 
-    // 商品名取得のgetterメソッド（表示専用）
+    // 商品名取得のgetterメソッド
     public void getProduct(){
         System.out.println("商品名: " + name);
     }
 
-    // 在庫数取得用getterメソッド（表示専用）
+    // 在庫数取得用getterメソッド
     public void getQuantities(){
         if(stock < 0){
             System.out.println("エラー：不適切な値が入力されました");
@@ -25,6 +25,9 @@ public class Product {
     public void addStock(int amount){
         stock += amount;
         System.out.println(amount + "個追加しました");
+        if(stock < 0){
+            System.out.println("エラー");
+        }
     }
 
     // 在庫を減少するメソッド
