@@ -13,7 +13,7 @@ public class Main3 {
         p.addStock(10);
         p.displayInfo();
 
-        // 在庫不足エラーを表示（100個以上販売しようとする）
+        // 在庫不足のエラーを表示（100個以上販売）
         p.removeStock(100);
     }
 }
