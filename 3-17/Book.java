@@ -2,28 +2,20 @@ public class Book {
     private String title;
     private boolean isLent;
 
-    public Book(String title, boolean isLent){
+    public Book(String title) {
         this.title = title;
-        this.isLent = isLent;
+        this.isLent = false; // 初期状態は未貸出
     }
 
-    // タイトル取得用getterメソッド
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    // 貸出状態確認用メソッド
-    public boolean isLent(){
+    public boolean isLent() {
         return isLent;
     }
 
-    // 貸出状態変更用メソッド（貸出中にする）
-    protected void setLent(){
-        this.isLent = true;
-    }
-
-    // 返却処理（貸出状態を解除）
-    protected void setReturned(){
-        this.isLent = false;
+    protected void setLent(boolean isLent) {
+        this.isLent = isLent;
     }
 }
