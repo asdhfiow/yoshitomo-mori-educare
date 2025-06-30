@@ -2,10 +2,14 @@ public class Main1 {
     public static void main(String[] args) {
         BankAccount ba = new BankAccount(1000);
 
-        ba.getBalance();
+        System.out.println("残高：" + ba.getBalance() + "円");
         ba.deposit(2000);
-        ba.getBalance();
-        ba.withdraw(1000);
-        ba.getBalance();
+        System.out.println("残高：" + ba.getBalance() + "円");
+
+        ba.withdraw(1500);  
+        System.out.println("残高：" + ba.getBalance() + "円");
+
+        ba.withdraw(3000); 
+        System.out.println("残高：" + ba.getBalance() + "円");
     }
 }
