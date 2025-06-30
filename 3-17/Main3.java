@@ -1,17 +1,19 @@
 public class Main3 {
     public static void main(String[] args) {
-        Product pr = new Product("りんご", 100);
+        Product p = new Product("りんご", 100);
 
-        System.out.println("商品名: " + pr.getName());
-        System.out.println("在庫数: " + pr.getStock() + "個");
-        pr.removeStock(50);
+        // 初期在庫表示
+        p.displayInfo();
 
-        System.out.println("商品名: " + pr.getName());
-        System.out.println("在庫数: " + pr.getStock() + "個");
-        pr.addStock(10);
+        // 50個販売
+        p.removeStock(50);
+        p.displayInfo();
 
-        System.out.println("商品名: " + pr.getName());
-        System.out.println("在庫数: " + pr.getStock() + "個");
-        pr.removeStock(44444444); // 在庫不足エラー出るはず
+        // 10個追加
+        p.addStock(10);
+        p.displayInfo();
+
+        // 在庫不足エラーを表示（100個以上販売しようとする）
+        p.removeStock(100);
     }
 }
