@@ -1,10 +1,9 @@
 public class Main3 {
     public static void main(String[] args) {
-        Library l = new Library();
-        l.display();
-        l.borrowBooks();
-        l.display();
-        l.returnBooks();
-        l.display();
+        Library.display();
+        Library.borrowBooks();
+        Library.display();
+        Library.returnBooks();
+        Library.display();
     }
 }
