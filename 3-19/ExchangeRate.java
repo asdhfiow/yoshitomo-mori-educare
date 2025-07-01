@@ -2,12 +2,12 @@ public class ExchangeRate {
     static double usdRate = 145.0;
     static double eurRate = 160.0;
     
-    static void updateRate(double newUsdRate, double newEurRate){
+    static void updateRates(double newUsdRate, double newEurRate){
         usdRate = newUsdRate;
         eurRate = newEurRate;
         System.out.println("レート更新");
     }
-    static double toJPY(String currency, double amount){
+    public static int toJPY(String currency, double amount){
         if(currency.equals("USD")){
             return (int)(amount * usdRate); // ドルから日本円に換算
         }else if(currency.equals("EUR")){
@@ -15,5 +15,7 @@ public class ExchangeRate {
         } else{
             return -1; // その他の通貨の場合
         }
+
+        }
     }
-}
+
