@@ -1,7 +1,7 @@
 public class Main3 {
     public static boolean validateUsername(String username) {
         // ここにコードを書いてください
-        return username.matches("^[A-Za-z_][A-Za-z0-9_]{3,15}$");
+        return username.matches("^[A-Za-z_0-9]{4,16}$") && !username.matches("^\\d+$"); 
     }
 
     public static boolean validatePassword(String password) {
