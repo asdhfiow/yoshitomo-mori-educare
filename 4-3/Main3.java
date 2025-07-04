@@ -1,12 +1,12 @@
 public class Main3 {
     public static boolean validateUsername(String username) {
         // ここにコードを書いてください
-        return username.matches("^[A-Za-z_][A-Za-z0-9_]{2,14}$");
+        return username.matches("^[A-Za-z_][A-Za-z0-9_]{3,15}$");
     }
 
     public static boolean validatePassword(String password) {
         // ここにコードを書いてください
-        return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$");
+        return password.matches("^(?=.*[A-Z])(?=.*\\d).{8,}$");
     }
 
     public static void main(String[] args) {
