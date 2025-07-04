@@ -3,11 +3,14 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.ZoneId;
 
-public class Main4 {   
+public class Main4 {
+
+    // フィールド
     private String eventName;
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;
 
+    // コンストラクタ
     public Main4(String name, ZonedDateTime start, ZonedDateTime end) {
         this.eventName = name;
         this.startTime = start;
@@ -15,7 +18,6 @@ public class Main4 {
     }
 
     public String getEventDuration() {
-
         Duration duration = Duration.between(startTime, endTime);
         long days = duration.toDays();
         long hours = duration.toHours() % 24;
@@ -39,8 +41,9 @@ public class Main4 {
         // ここにテスト用のコードを書いてください
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年M月d日 HH:mm z");
 
-        ZonedDateTime start = ZonedDateTime.parse("2024年7月1日 10:00 JST", formatter);
-        ZonedDateTime end = ZonedDateTime.parse("2024年7月15日 22:00 JST", formatter);
+        // ZonedDateTime型変数start、endに時刻を取得してくるメソッドを入れる。
+        ZonedDateTime start = ZonedDateTime.of(2024,7,1, 10,00,00,00, ZoneId.of("Asia/Tokyo"));
+        ZonedDateTime end = ZonedDateTime.of(2024,7,15,22,00,00,00,  ZoneId.of("Asia/Tokyo"));
 
         Main4 main4 = new Main4("サマーフェスティバル", start, end);
 
