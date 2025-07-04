@@ -3,24 +3,19 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.ZoneId;
 
-public class Main4 {
-
-    // イベントの名前と、イベントが始まる時間と終わる時間を定義
+public class Main4 {   
     private String eventName;
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;
 
-    // コンストラクタで、name、start, endを初期化。名前と始まる時間と終わる時間をコンストラクタで返す
     public Main4(String name, ZonedDateTime start, ZonedDateTime end) {
         this.eventName = name;
         this.startTime = start;
         this.endTime = end;
     }
 
-    // getEventDurationメソッド
     public String getEventDuration() {
 
-        // durationクラスで日付と時間をとってくる
         Duration duration = Duration.between(startTime, endTime);
         long days = duration.toDays();
         long hours = duration.toHours() % 24;
