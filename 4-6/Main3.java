@@ -1,57 +1,32 @@
 // ここにコードを書いてください
 // 必要なインポート文を記載
-import java.util.HashSet;
-import java.util.Set;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Main4 {
+public class Main3 {
     public static void main(String[] args) {
-        // 発見したモンスターを管理するHashSet（重複なし）
-        Set<String> discoveredMonsters = new HashSet<>();
+        // 商品名と在庫数を管理するHashMapを作成
+        Map<String, Integer> productStock = new HashMap<>();
 
-        // 戦闘履歴を管理するArrayList（重複あり）
-        List<String> battleHistory = new ArrayList<>();
-        
-        // 全モンスターのリスト
-        Set<String> allMonsters = new HashSet<>();
-        allMonsters.add("スライム");
-        allMonsters.add("ドラゴン");
-        allMonsters.add("ゴブリン");
-        allMonsters.add("フェニックス");
-        allMonsters.add("ユニコーン");
+        // 商品を入荷（在庫を追加）
+        productStock.put("おにぎり",15);
+        productStock.put("サンドイッチ", 8);
+        productStock.put("お弁当" ,5);
 
-        // モンスターとの遭遇をシミュレート
-        battleHistory.add("スライム");
-        battleHistory.add("スライム");
-        battleHistory.add("スライム");
-        battleHistory.add("スライム");
-        battleHistory.add("スライム");
-        battleHistory.add("ドラゴン");
-        battleHistory.add("ドラゴン");
-        battleHistory.add("ゴブリン");
-        battleHistory.add("ゴブリン");
-        
-        // 戦闘履歴を記録
-        discoveredMonsters.addAll(battleHistory);
+        // 現在の在庫状況を表示
+        System.out.println("在庫状況" + productStock);
 
-        // 発見済みモンスターを表示
-        System.out.println("発見済みモンスター：" + discoveredMonsters);
-        System.out.println("発見済みモンスター数：" + discoveredMonsters.size());
-        
-        // スライムとの戦闘回数を計算
-        int slime = 0;
-        for (String name : battleHistory){
-            if(name.equals("スライム"))
-            slime++;
-            
-        }
-        System.out.println("スライムとの戦闘回数：" + slime);
-        
-        // 未発見のモンスターを計算
-        Set<String> undiscovered = new HashSet<>(allMonsters);
-        undiscovered.removeAll(discoveredMonsters);
-        System.out.println("未発見のモンスター：" + undiscovered);
+        // おにぎりを1個販売
+        int currentStock = productStock.get("おにぎり");
+        System.out.println("おにぎりを1個販売しました");
+        productStock.put("おにぎり" , currentStock - 1);
 
+
+        // 更新後の在庫状況を表示
+        System.out.println("在庫状況：" + productStock);
+        
+        // アイスクリームの在庫確認
+        boolean hasIcecream = productStock.containsKey("アイスクリーム");
+        System.out.println("アイスは在庫がありますか？" + hasIcecream);
     }
 }
