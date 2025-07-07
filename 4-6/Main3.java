@@ -18,8 +18,8 @@ public class Main3 {
 
         // おにぎりを1個販売
         int currentStock = productStock.get("おにぎり");
-        System.out.println("おにぎりを1個販売しました");
         productStock.put("おにぎり" , currentStock - 1);
+        System.out.println("おにぎりを1個販売しました");
 
 
         // 更新後の在庫状況を表示
