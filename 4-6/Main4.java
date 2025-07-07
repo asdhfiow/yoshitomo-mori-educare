@@ -8,38 +8,40 @@ import java.util.ArrayList;
 public class Main4 {
     public static void main(String[] args) {
         // 発見したモンスターを管理するHashSet（重複なし）
-        Set<String> monsters = new HashSet<>();
+        Set<String> discoveredMonsters = new HashSet<>();
 
         // 戦闘履歴を管理するArrayList（重複あり）
-        List<String> history = new ArrayList<>();
+        List<String> battleHistory = new ArrayList<>();
         
         // 全モンスターのリスト
-        monsters.add("スライム");
-        monsters.add("ドラゴン");
-        monsters.add("ゴブリン");
-        monsters.add("フェニックス");
-        monsters.add("ユニコーン");
+        Set<String> allMonsters = new HashSet<>();
+        allMonsters.add("スライム");
+        allMonsters.add("ドラゴン");
+        allMonsters.add("ゴブリン");
+        allMonsters.add("フェニックス");
+        allMonsters.add("ユニコーン");
+
+        // モンスターとの遭遇をシミュレート
+        battleHistory.add("スライム");
+        battleHistory.add("スライム");
+        battleHistory.add("スライム");
+        battleHistory.add("スライム");
+        battleHistory.add("スライム");
+        battleHistory.add("ドラゴン");
+        battleHistory.add("ドラゴン");
+        battleHistory.add("ゴブリン");
+        battleHistory.add("ゴブリン");
         
         // 戦闘履歴を記録
-        history.add("スライム");
-        history.add("スライム");
-        history.add("スライム");
-        history.add("スライム");
-        history.add("スライム");
-        history.add("ドラゴン");
-        history.add("ドラゴン");
-        history.add("ゴブリン");
-        history.add("ゴブリン");
+        discoveredMonsters.addAll(battleHistory);
 
-        
         // 発見済みモンスターを表示
-        Set<String> discovered = new HashSet<>(history);
-        System.out.println("発見済みモンスター: " + discovered);
-        System.out.println("発見済みモンスター数: " + discovered.size());
+        System.out.println("発見済みモンスター：" + discoveredMonsters);
+        System.out.println("発見済みモンスター数：" + discoveredMonsters.size());
         
         // スライムとの戦闘回数を計算
         int slime = 0;
-        for (String name : history){
+        for (String name : battleHistory){
             if(name.equals("スライム"))
             slime++;
             
@@ -47,9 +49,9 @@ public class Main4 {
         System.out.println("スライムとの戦闘回数：" + slime);
         
         // 未発見のモンスターを計算
-        Set<String> undiscovered = new HashSet<>(monsters);
-        undiscovered.removeAll(discovered);
-        System.out.println("未発見のモンスター: " + undiscovered);
+        Set<String> undiscovered = new HashSet<>(allMonsters);
+        undiscovered.removeAll(discoveredMonsters);
+        System.out.println("未発見のモンスター：" + undiscovered);
 
     }
 }
