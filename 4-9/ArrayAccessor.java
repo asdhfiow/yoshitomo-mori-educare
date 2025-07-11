@@ -5,8 +5,11 @@ public class ArrayAccessor {
         this.array = array;
     }
 
-    // 指定位置の要素を返す。範囲外なら例外スロー
-    public String getElement(int index) throws ArrayIndexOutOfBoundsException {
-        return String.valueOf(array[index]);
+  
+    public int getElement(int index) throws ArrayIndexOutOfBoundsException {
+        if (index < 0 || index >= array.length) {
+            throw new ArrayIndexOutOfBoundsException("指定された位置は範囲外です");
+        }
+        return array[index]; 
     }
 }
