@@ -1,45 +1,55 @@
 public class Main4 {
     public static void main(String[] args) {
-        String[] student = new String[5];
-        student[0] = "アリス";
-        student[1] = "ボブ";
-        student[2] = "チャーリー";
-        student[3] = null;  // 明示的にnullを設定
-        student[4] = "イヴ";
+        StudentManager manager = new StudentManager();
 
-        // try-catch: 範囲外への追加
+        // 学生を追加
         try {
-            student[5] = "追加できない";
+            manager.addStudent("アリス");
+            manager.addStudent("ボブ");
+            manager.addStudent("チャーリー");
+            manager.addStudent(null);       
+            manager.addStudent("イヴ");
+            manager.addStudent("unko"); 
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("エラー: これ以上学生を追加できません。リストがいっぱいです。");
+            System.out.println("エラー: " + e.getMessage());
         }
 
         // 学生ID 2 の出力
-        System.out.println("学生ID 2: " + student[2]);
-
-        // 学生ID 3: null チェックあり
-        if (student[3] == null) {
-            System.out.println("エラー: 学生ID 3 にデータがありません。");
-        }
-        System.out.println("学生ID 3: " + student[3]);
-
-        // 学生ID 10 へのアクセス（例外処理）
         try {
-            System.out.println("学生ID 10: " + student[10]);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("エラー: 無効な学生IDです: 10");
+            System.out.println("学生ID 2: " + manager.getStudent(2));
+        } catch (Exception e) {
+            System.out.println("エラー: " + e.getMessage());
+        }
+
+        // 学生ID 3 のnullチェック
+        try {
+            System.out.println("学生ID 3: " + manager.getStudent(3));
+        } catch (Exception e) {
+            System.out.println("エラー: " + e.getMessage());
+            System.out.println("学生ID 3: null");
+        }
+
+        // 学生ID 10 のアクセス
+        try {
+            System.out.println("学生ID 10: " + manager.getStudent(10));
+        } catch (Exception e) {
+            System.out.println("エラー: " + e.getMessage());
             System.out.println("学生ID 10: null");
         }
 
         // 値の更新
-        student[1] = "ボビー";
-        System.out.println("更新後の学生ID 1: " + student[1]);
-
-        // 再度、無効なIDにアクセスして例外出力
         try {
-            System.out.println(student[10]);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("エラー: 無効な学生IDです: 10");
+            manager.updateStudent(1, "ボビー");
+            System.out.println("更新後の学生ID 1: " + manager.getStudent(1));
+        } catch (Exception e) {
+            System.out.println("エラー: " + e.getMessage());
+        }
+
+        // 再度、無効なIDへのアクセス
+        try {
+            System.out.println(manager.getStudent(10));
+        } catch (Exception e) {
+            System.out.println("エラー: " + e.getMessage());
         }
     }
 }
