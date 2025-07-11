@@ -1,0 +1,7 @@
+チェックすべきこと
+
+---メソッド名---------- 起こりうる例外------------------------------------防止方法--------------------------
+|addStudent()   |  ArrayIndexOutOfBounds	                 |  count < students.length のチェック      |
+|getStudent(id) |  ArrayIndexOutOfBounds, NullPointer	     |  idの範囲とstudents[id] != null をチェック |
+|updateStudent()|  ArrayIndexOutOfBounds	                 |  id の範囲をチェック                      |
+-------------------------------------------------------------------------------------------------------
