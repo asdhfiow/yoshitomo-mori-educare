@@ -7,10 +7,10 @@ public class Main4 {
             manager.addStudent("アリス");
             manager.addStudent("ボブ");
             manager.addStudent("チャーリー");
-            manager.addStudent(null);       
+            manager.addStudent(null);
             manager.addStudent("イヴ");
-            manager.addStudent("unko"); 
-        } catch (ArrayIndexOutOfBoundsException e) {
+            manager.addStudent("追加不可");
+        } catch (Exception e) {
             System.out.println("エラー: " + e.getMessage());
         }
 
@@ -21,7 +21,7 @@ public class Main4 {
             System.out.println("エラー: " + e.getMessage());
         }
 
-        // 学生ID 3 のnullチェック
+        // 学生ID 3（null）
         try {
             System.out.println("学生ID 3: " + manager.getStudent(3));
         } catch (Exception e) {
@@ -29,7 +29,7 @@ public class Main4 {
             System.out.println("学生ID 3: null");
         }
 
-        // 学生ID 10 のアクセス
+        // 学生ID 10（範囲外）
         try {
             System.out.println("学生ID 10: " + manager.getStudent(10));
         } catch (Exception e) {
@@ -45,12 +45,9 @@ public class Main4 {
             System.out.println("エラー: " + e.getMessage());
         }
 
-        // 再度、無効なIDへのアクセス
+        // 再度、無効なID
         try {
-            String student = manager.getStudent(10);
-            if(student != null){
-                System.out.println(student);
-            }
+            System.out.println(manager.getStudent(10));
         } catch (Exception e) {
             System.out.println("エラー: " + e.getMessage());
         }
