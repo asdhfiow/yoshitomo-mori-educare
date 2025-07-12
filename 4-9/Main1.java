@@ -7,8 +7,6 @@ public class Main1 {
             System.out.println("計算結果：" + result);
         } catch(ArithmeticException e){
             System.out.println("10 ÷ 0 = エラー：0で割ることはできません");
-        }finally{
-            int normalResult = calc.divide(10, 5);
         }
     }
 }
