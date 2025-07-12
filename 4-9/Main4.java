@@ -47,7 +47,10 @@ public class Main4 {
 
         // 再度、無効なIDへのアクセス
         try {
-            System.out.println(manager.getStudent(10));
+            String student = manager.getStudent(10);
+            if(student != null){
+                System.out.println(student);
+            }
         } catch (Exception e) {
             System.out.println("エラー: " + e.getMessage());
         }
