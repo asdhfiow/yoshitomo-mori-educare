@@ -14,7 +14,7 @@ public class Character implements Comparable <Character>{
     // 戦闘力を後順でソート
     @Override
     public int compareTo(Character other){
-        return (int)(other.getBattlePower() - this.getBattlePower());
+        return Integer.compare(other.getBattlePower(), - this.getBattlePower());
     }
     
     // キャラクター情報を文字列で返す
