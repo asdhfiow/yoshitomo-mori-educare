@@ -20,6 +20,6 @@ public class Character implements Comparable <Character>{
     // キャラクター情報を文字列で返す
     @Override
     public String toString(){
-        return name + "(HP:" + hp + "攻撃力：" + attack + ")";
+        return name + "(HP：" + hp + "攻撃力：" + attack + ")" + "戦闘力：" + getBattlePower();
     }
 }
