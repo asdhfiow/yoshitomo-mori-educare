@@ -8,7 +8,7 @@ public class Main4 {
         copy.addSkill("サンダー");
 
         System.out.println("--- 深いコピー後にスキル追加 ---");
-        original.showSkills();
-        copy.showSkills();
+        original.showSkills("元");
+        copy.showSkills("コピー後");
     }
 }
