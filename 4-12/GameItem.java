@@ -9,7 +9,7 @@ class GameItem{
 
     @Override
     public String toString(){
-        return "[" + itemName + "] 価格：　" + price + "G";
+        return "[" + itemName + "] 価格：" + price + "G";
         
     }
 }
