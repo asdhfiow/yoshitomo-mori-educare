@@ -14,18 +14,18 @@ public class PartyMember implements Cloneable {
         skills.add(skill);
     }
 
-    public void showSkills(String label) {
-        System.out.println(label + "のキャラクター「" + name + "」のスキル: " + skills);
+    public void showSkills() {
+        System.out.println("キャラクター「" + name + "」のスキル: " + skills);
     }
 
     @Override
     public PartyMember clone() {
         try {
             PartyMember cloned = (PartyMember) super.clone();
-            cloned.skills = new ArrayList<>(this.skills); 
+            cloned.skills = new ArrayList<>(this.skills);  // 深いコピー
             return cloned;
         } catch (CloneNotSupportedException e) {
-            throw new AssertionError(); 
+            throw new AssertionError();
         }
     }
 }
