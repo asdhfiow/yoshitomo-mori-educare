@@ -1,6 +1,6 @@
-class GameItem{
-    String itemName;
-    int price;
+public class GameItem{
+    private String itemName;
+    private int price;
 
     public GameItem(String itemName, int price){
         this.itemName = itemName;
