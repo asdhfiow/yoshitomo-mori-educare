@@ -10,39 +10,17 @@ public class CalculatorTest {
 
     // 足し算のテスト
     @Test
-    void testAddPositiveNumbers() {
-        int result = calculator.add(3, 5);
-        assertEquals(8, result, "正の数同士の足し算に失敗");
+    void testAdd() {
+        assertEquals(5, calculator.add(2, 3), "2 + 3は５のはず");
+        assertEquals(4, calculator.add(-1, 5), "-1 + 5は４のはず");
+        assertEquals(4, calculator.add(0, 4) ,"0 + 4は４のはず");
     }
 
+    //引き算のテスト
     @Test
-    void testAddWithNegativeNumbers() {
-        int result = calculator.add(-3, 5);
-        assertEquals(2, result, "負の数を含む足し算に失敗");
-    }
-
-    @Test
-    void testAddWithZero() {
-        int result = calculator.add(0, 5);
-        assertEquals(5, result, "ゼロを含む足し算に失敗");
-    }
-
-    // 引き算のテスト
-    @Test
-    void testSubtractPositiveNumbers() {
-        int result = calculator.subtract(8, 5);
-        assertEquals(3, result, "正の数同士の引き算に失敗");
-    }
-
-    @Test
-    void testSubtractWithNegativeNumbers() {
-        int result = calculator.subtract(-3, 5);
-        assertEquals(-8, result, "負の数を含む引き算に失敗");
-    }
-
-    @Test
-    void testSubtractWithZero() {
-        int result = calculator.subtract(5, 0);
-        assertEquals(5, result, "ゼロを含む引き算に失敗");
+    void testSubstract(){
+        assertEquals(2, calculator.subtract(5, -3), "5 -(-3)は８のはず");
+        assertEquals(1, calculator.subtract(-1, -2), "-1-(-3)は２のはず");
+        assertEquals(4, calculator.subtract(4, -0), "4-(-0)は４のはず");
     }
 }
