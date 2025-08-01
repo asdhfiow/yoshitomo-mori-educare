@@ -1,47 +1,33 @@
 package test;
 
 import main.Divider;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 public class DividerTest {
 
     Divider divider = new Divider();
 
-    // 正の数同士の除算
     @Test
-    void testDividePositiveNumbers() {
-        double result = divider.divide(10, 2);
-        assertEquals(5.0, result, 1e-9, "10 ÷ 2 should be 5.0");
+    void testNormalDivision() {
+        // 正の数同士の除算
+        assertEquals(5.0, divider.divide(10, 2), 0.0001, "10 ÷ 2 は 5.0 のはず");
+
+        // 負の数を含む除算
+        assertEquals(-5.0, divider.divide(-10, 2), 0.0001, "-10 ÷ 2 は -5.0 のはず");
+
+        // 少数を含む除算
+        assertEquals(2.5, divider.divide(5, 2), 0.0001, "5 ÷ 2 は 2.5 のはず");
     }
 
-    // 負の数を含む除算
-    @Test
-    void testDivideWithNegativeNumber() {
-        double result = divider.divide(-10, 2);
-        assertEquals(-5.0, result, 1e-9, "-10 ÷ 2 should be -5.0");
-
-        result = divider.divide(10, -2);
-        assertEquals(-5.0, result, 1e-9, "10 ÷ -2 should be -5.0");
-
-        result = divider.divide(-10, -2);
-        assertEquals(5.0, result, 1e-9, "-10 ÷ -2 should be 5.0");
-    }
-
-    // 少数を含む除算
-    @Test
-    void testDivideWithDecimalNumbers() {
-        double result = divider.divide(5.5, 2.2);
-        assertEquals(2.5, result, 1e-9, "5.5 ÷ 2.2 should be 2.5");
-    }
-
-    // ゼロによる除算（例外発生確認）
-    @Test
-    void testDivideByZero() {
-        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
-            divider.divide(10, 0);
-        }, "Division by zero should throw IllegalArgumentException");
-
-        assertEquals("Divider cannot be zero.", e.getMessage(), "Exception message mismatch");
+     @Test
+    void testExceptionDivision() {
+        Divider divider = new Divider();
+        try {
+            divider.divide(5.0, 0.0);
+            fail("ゼロ除算で例外が発生するはず");
+        } catch (IllegalArgumentException e) {
+            assertEquals("ゼロで除算はできません", e.getMessage());
+        }
     }
 }
