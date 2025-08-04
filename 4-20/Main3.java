@@ -5,7 +5,6 @@ public class Main3 {
 
         // exercise_folderを作成
         File folder = new File("exercise_folder");
-        if (!folder.exists()){
             if (!folder.exists()) {
                 if (folder.mkdir()){
                     System.out.println("フォルダを作成しました。");
@@ -15,7 +14,7 @@ public class Main3 {
             } else {
                 System.out.println("フォルダはすでに存在します。");
             }
-            }
+            
 
             // exercise_file.txt.ファイルを作成
             File file = new File(folder, "exercise_file.txt");
@@ -34,4 +33,3 @@ public class Main3 {
                 }
             }
         }
-
