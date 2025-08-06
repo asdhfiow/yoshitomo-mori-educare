@@ -8,7 +8,7 @@ public class Main4 {
             Gson gson = new Gson();
 
             // JSONファイルをFileReaderで読み込んで文字列にする
-            FileReader reader = new FileReader("exercise.json");
+            FileReader reader = new FileReader("excersise.json");
 
             // JSON文字列をJavaのEmployeeクラスに変換
             Employee employee = gson.fromJson(reader, Employee.class);
@@ -16,7 +16,7 @@ public class Main4 {
             // 情報を出力
             System.out.println("Name : " + employee.getName());
             System.out.println("Age : " + employee.getAge());
-            System.out.println("Salary : " + employee.getSalary());
+            System.out.printf("Salary : %.0f%n" , employee.getSalary());
 
         } catch (IOException e) {
             System.out.println("ファイル読み込みエラー: " + e.getMessage());
