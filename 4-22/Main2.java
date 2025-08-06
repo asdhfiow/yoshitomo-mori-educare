@@ -5,7 +5,7 @@ import java.util.Properties;
 public class Main2 {
     public static void main(String[] args) {
         // プロパティファイルのパス
-        String filePath = "exercise.properties";
+        String filePath = "excersise.properties";
 
         // Properties オブジェクトを作成
         Properties properties = new Properties();
