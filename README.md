@@ -4,11 +4,11 @@
     cd src
     ```
 2. **コンパイル（Gson の jar を指定）**
-    - macOS / Linux の場合：
+     macOS / Linux の場合：
       ```bash
       javac -cp ../lib/gson-2.10.1.jar:. Main4.java Employee.java
       ```
-    - Windows の場合：
+     Windows の場合：
       ```bash
       javac -cp ../lib/gson-2.10.1.jar;. Main4.java Employee.java
       ```
