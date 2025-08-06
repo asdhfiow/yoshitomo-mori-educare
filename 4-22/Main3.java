@@ -7,7 +7,7 @@ public class Main3 {
     public static void main(String[] args){
         try {
             // XMLファイルオブジェクトの作成
-            File xmlFile = new File("exercise.xml");
+            File xmlFile = new File("excersise.xml");
 
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
