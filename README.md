@@ -14,6 +14,6 @@
       ```
 
 ## 実行方法
-- macOS / Linux の場合：
+ macOS / Linux の場合：
   ```bash
   java -cp ../lib/gson-2.10.1.jar:. Main4
