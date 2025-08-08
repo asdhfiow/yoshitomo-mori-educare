@@ -6,8 +6,7 @@ public class Main4 {
         
         int sum = numbers.stream()
                         .filter(x -> x % 2 == 0) // 偶数を選ぶ
-                        .map(x -> x * 2) // 偶数を２倍する
-                        .mapToInt(Integer::intValue) // IntStreamに変換
+                        .mapToInt(x -> x * 2) // x * 2をしてIntStreamに変換
                         .sum(); // 合計する
             System.out.println(sum);
     }
