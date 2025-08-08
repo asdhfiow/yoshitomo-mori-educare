@@ -1,7 +1,5 @@
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
-
 
 public class Main5{
     // 数値を２倍する関数
@@ -16,10 +14,15 @@ public class Main5{
     public static void main(String[] args){
         int num = 8;
 
-        Stream.of(num)
-                .map(multiplyByTwo)
-                .map(subtractFive)
-                .filter(isPositive)
-                .forEach(x -> System.out.println("正の数です"));
+        int result = multiplyByTwo
+                    .andThen(subtractFive)
+                    .apply(num);
+
+
+                if (isPositive.test(result)) {
+                    System.out.println("正の数です");
+                } else {
+                    System.out.println("負の数またはゼロです");
+                }
     }
 }
