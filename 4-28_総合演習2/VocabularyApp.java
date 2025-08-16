@@ -72,12 +72,12 @@ public class VocabularyApp {
     // クイズの処理内容
     private void startQuiz() {
         int totalQuestions = wordManager.getWordCount();
-    if (wordManager.getWordCount() == 0) {
+
+        if (wordManager.getWordCount() == 0) {
             System.out.println("登録された単語がありません。");
             return;
     }
 
-    int score = 0;
     System.out.println("=== クイズを開始します ===");
 
     for (int i = 0; i < totalQuestions; i++){
@@ -90,13 +90,12 @@ public class VocabularyApp {
 
             if (quiz.checkAnswer(word , answer)){
                 System.out.println("正解です!");
-                score ++;
             }else{
                 System.out.println("不正解です。正解は" + japanese + "でした。");
             }
         }
             System.out.println("クイズ終了！");
-            System.out.println(totalQuestions + "問中" + quiz.getScore());
+            System.out.println(quiz.getTotalQuestions + "問中" + quiz.getScore() + "問正解でした！");
     }
 
     // インポートした時の処理
