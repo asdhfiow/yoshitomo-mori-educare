@@ -15,7 +15,7 @@ public class ProductMaintenance {
         
         // JDBCドライバのロード
         try {
-            Class.forName("org.postgresql.Driver");  // ← ここが間違ってた
+            Class.forName("org.postgresql.Driver"); 
         } catch (ClassNotFoundException e) {
             System.out.println("ドライバのロードに失敗しました。");
             return;
