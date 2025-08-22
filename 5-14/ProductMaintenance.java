@@ -4,9 +4,9 @@ public class ProductMaintenance {
 
     public static void main(String[] args) {
         // データベース接続情報
-        String url = "jdbc:postgresql://localhost:5432/educure_db"; // データベースURL
-        String username = "yoshitomo"; // データベースのユーザー名
-        String password = "Yoshitomo12"; // データベースのパスワード
+        String url = "jdbc:postgresql://localhost:5432/educure_db"; 
+        String username = "yoshitomo";
+        String password = "Yoshitomo12"; 
 
         String updateSQL1 = "UPDATE products SET price = 0 WHERE stock = 0"; 
         String deleteSQL = "DELETE FROM products WHERE price >= 200000";
