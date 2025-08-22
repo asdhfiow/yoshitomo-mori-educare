@@ -7,7 +7,7 @@ public class InsertProduct {
     public static void main(String[] args) {
         String url = "jdbc:postgresql://localhost:5432/educure_db";
         String user = "yoshitomo";
-        String password = "Yoshitomo123";
+        String password = "Yoshitomo12";
 
         // 追加する商品情報
         String productName = "スマートフォン";
