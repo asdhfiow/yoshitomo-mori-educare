@@ -13,7 +13,7 @@ public class UpdateStock {
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
-            System.err.println("ドライバのロードに失敗しました。");
+            System.out.println("ドライバのロードに失敗しました。");
             return;
         }
 
@@ -26,15 +26,13 @@ public class UpdateStock {
         try {
             con = DriverManager.getConnection(url, user, password);
 
-            // 在庫確認
-            checkPstmt = con.prepareStatement("SELECT COUNT * FROM products WHERE stock > 0");
-            rs = checkPstmt.executeQuery();
-            if (rs.next()) {
-                int count = rs.getInt(1);
-                if (count == 0) {
+            // 在庫１０減らす
+            checkPstmt = con.prepareStatement("UPDATE products SET stock = CASE WHEN stock >= 10 THEN stock - 10 ELSE 0 END");
+            int updateRows = checkPstmt.executeUpdate();
+            if (updateRows == 0){
                     System.err.println("エラー: 在庫が全て0のため、更新できる商品がありません。");
                     return;
-                }
+                
             }
 
 
