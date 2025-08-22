@@ -25,13 +25,14 @@ public class UpdateProduct {
              PreparedStatement selectPstmt = con.prepareStatement(selectSQL)) {
 
             // タブレットの価格更新
-            updatePricePstmt.executeUpdate();
+            int countPriceRows = updatePricePstmt.executeUpdate();
 
             // 在庫更新
-            updateStockPstmt.executeUpdate();
+            int countStockRows = updateStockPstmt.executeUpdate();
 
             // 更新後のテーブルを表示
             try (ResultSet rs = selectPstmt.executeQuery()) {
+                System.out.println("価格を価格を値下げした行数:" + countPriceRows + " 在庫を増やした行数:" + countStockRows);
                 System.out.println("| product_id | product_name  | price  | stock |");
                 System.out.println("|------------|---------------|--------|-------|");
 
