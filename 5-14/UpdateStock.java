@@ -16,10 +16,8 @@ public class UpdateStock {
             System.out.println("ドライバのロードに失敗しました。");
             return;
         }
-
         Connection con = null;
         PreparedStatement checkPstmt = null;
-        PreparedStatement updatePstmt = null;
         PreparedStatement selectPstmt = null;
         ResultSet rs = null;
 
@@ -32,9 +30,7 @@ public class UpdateStock {
             if (updateRows == 0){
                     System.err.println("エラー: 在庫が全て0のため、更新できる商品がありません。");
                     return;
-                
             }
-
 
             // 更新後の表示
             selectPstmt = con.prepareStatement("SELECT * FROM products ORDER BY product_id");
@@ -56,12 +52,6 @@ public class UpdateStock {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-            try { if (checkPstmt != null) checkPstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-            try { if (updatePstmt != null) updatePstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-            try { if (selectPstmt != null) selectPstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-            try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     }
 }
