@@ -13,8 +13,8 @@ public class VocabularyApp {
     this.scanner = new Scanner(System.in);
 
     this.dbManager = new DBManager();        // 先に dbManager を作る
-    this.dbManager.initializeDatabase();    // DB接続も先にする
-    this.wordManager = new WordManager(dbManager); // その後 WordManager に渡す
+    this.dbManager.initializeDatabase();     // DB接続も先にする
+    this.wordManager = new WordManager(dbManager);
     this.quiz = new Quiz(wordManager);
     this.fileHandler = new FileHandler();
 }
@@ -105,7 +105,7 @@ public class VocabularyApp {
             }
         }
             System.out.println("クイズ終了！");
-            System.out.println(quiz.getTotalQuestions() + "問中" + quiz.getScore() + "問正解でした！");
+            System.out.println(totalQuestions + "問中" + quiz.getScore() + "問正解でした！");
     }
 
     // インポートした時の処理
