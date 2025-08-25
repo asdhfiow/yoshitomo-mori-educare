@@ -87,6 +87,7 @@ public class VocabularyApp {
             System.out.println("登録された単語がありません。");
             return;
     }
+     quiz = new Quiz(wordManager); // インスタンスを生成
 
     System.out.println("=== クイズを開始します ===");
 
@@ -105,7 +106,7 @@ public class VocabularyApp {
             }
         }
             System.out.println("クイズ終了！");
-            System.out.println(totalQuestions + "問中" + quiz.getScore() + "問正解でした！");
+            System.out.println(quiz.getTotalQuestions() + "問中" + quiz.getScore() + "問正解でした！");
     }
 
     // インポートした時の処理
