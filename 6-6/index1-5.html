@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テックカンファレンス2023</title>
+</head>
+<body>
+
+  <header>
+    <h1>テックカンファレンス2023</h1>
+    <nav>
+      <ul>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#">スピーカー</a></li>
+        <li><a href="#">登録</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>イベント概要</h2>
+      <p>このカンファレンスでは最新の技術トレンドを紹介しています。</p>
+    </article>
+
+    <aside>
+      <p>参加者にはオリジナルのノベルティが用意されています。</p>
+    </aside>
+
+    <table border="1">
+      <tr>
+        <th>セッション</th>
+        <th>スピーカー</th>
+        <th>時間</th>
+      </tr>
+      <tr>
+        <td rowspan="2">基調講演</td>
+        <td>Dr.Tech</td>
+        <td>10:00 ~ 11:00</td>
+      </tr>
+      <tr>
+        <td>Dr.Mac</td>
+        <td>11:30 ~ 12:30</td>
+      </tr>
+      <tr>
+        <td>パネルディスカッション</td>
+        <td>Dr.Tech</td>
+        <td>13:30 ~ 14:30</td>
+      </tr>
+    </table>
+
+    <form action="/submit" method="POST">
+      <p>
+        <label>名前：
+          <input type="text" name="name" required>
+        </label>
+      </p>
+
+      <p>
+        <label>メールアドレス：
+          <input type="email" name="email" required>
+        </label>
+      </p>
+
+      <p>
+        性別：
+        <label><input type="radio" name="gender" value="male"> 男性</label>
+        <label><input type="radio" name="gender" value="female"> 女性</label>
+      </p>
+
+      <p>
+        興味のある分野：
+        <label><input type="checkbox"value="tech"> 技術</label>
+        <label><input type="checkbox"value="art"> 芸術</label>
+        <label><input type="checkbox"value="science"> 科学</label>
+      </p>
+
+      <p>
+        国：
+        <select name="country">
+          <option value="japan">日本</option>
+          <option value="america">アメリカ</option>
+          <option value="uk">イギリス</option>
+        </select>
+      </p>
+
+      <p>
+        <label>コメント：</label><br>
+        <textarea name="comment" rows="4" cols="50"></textarea>
+      </p>
+
+      <p>
+        <input type="submit" value="送信">
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2023 テックカンファレンス. All rights reserved.
+  </footer>
+
+</body>
+</html>

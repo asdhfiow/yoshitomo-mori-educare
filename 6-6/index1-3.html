@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>趣味についてのアンケート</title>
+</head>
+<body>
+  <h1>趣味についてのアンケート</h1>
+  
+  <form>
+    <p>
+      <label>名前：
+        <input type="text">
+      </label>
+    </p>
+
+    <p>
+      <label>メールアドレス：
+        <input type="email">
+      </label>
+    </p>
+
+    <p>
+      性別：
+      <label><input type="radio"> 男</label>
+      <label><input type="radio"> 女</label>
+    </p>
+
+    <p>
+      趣味：
+      <label><input type="checkbox"> 読書</label>
+      <label><input type="checkbox"> スポーツ</label>
+      <label><input type="checkbox"> 音楽</label>
+    </p>
+
+    <p>
+      国：
+      <select name="country">
+        <option value="japan">日本</option>
+        <option value="usa">アメリカ</option>
+        <option value="uk">イギリス</option>
+      </select>
+    </p>
+
+    <p>
+      <label>コメント：</label><br>
+      <textarea name="comment" rows="4" cols="50"></textarea>
+    </p>
+
+      <input type="submit" value="送信">
+  </form>
+</body>
+</html>

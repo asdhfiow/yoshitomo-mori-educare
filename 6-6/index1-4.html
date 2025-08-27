@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>興味があることへのアンケート</title>
+</head>
+    <h1>興味があることへのアンケート</h1>
+<body>
+
+    <form action="\submit" method="POST">
+        <p>
+            <label>名前：</label>
+            <input type="text">
+        </p>
+
+        <p>
+            <label>メールアドレス：</label>
+            <input type="text">
+        </p>
+
+        <p>
+            性別：
+            <label><input type="radio">男性</label>
+            <label><input type="radio">女性</label>
+        </p>
+
+        <p>
+            興味のある分野：
+            <label><input type="checkbox">技術</label>
+            <label><input type="checkbox">芸術</label>
+            <label><input type="checkbox">科学</label>
+        </p>
+
+        <p>
+            国：
+            <select name="country">
+                <option value="japan">日本</option>
+                <option value="america">アメリカ</option>
+                <option value="uk">イギリス</option>
+            </select>
+        </p>
+
+        <p>
+            <label>コメント：</label><br>
+            <textarea name="comment" rows="4" cols="50"></textarea>
+        </p>
+
+        <input type="submit" value="送信">
+    </form>
+
+</body>
+</html>
