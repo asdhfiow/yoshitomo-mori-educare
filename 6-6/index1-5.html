@@ -11,9 +11,9 @@
     <h1>テックカンファレンス2023</h1>
     <nav>
       <ul>
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#">スピーカー</a></li>
-        <li><a href="#">登録</a></li>
+        <li><a href="#home">ホーム</a></li>
+        <li><a href="#speaker">スピーカー</a></li>
+        <li><a href="#Registration">登録</a></li>
       </ul>
     </nav>
   </header>
@@ -21,7 +21,7 @@
   <main>
     <article>
       <h2>イベント概要</h2>
-      <p>このカンファレンスでは最新の技術トレンドを紹介しています。</p>
+      <p>このカンファレンスでは最新の技術トレンドを紹介します。</p>
     </article>
 
     <aside>
@@ -50,49 +50,55 @@
       </tr>
     </table>
 
-    <form action="/submit" method="POST">
-      <p>
-        <label>名前：
-          <input type="text" name="name" required>
-        </label>
-      </p>
+  <form action="/submit" method="POST">
+        <p>
+            <label>名前：</label>
+            <input type="text">
+        </p>
 
-      <p>
-        <label>メールアドレス：
-          <input type="email" name="email" required>
-        </label>
-      </p>
+        <p>
+            <label>メールアドレス：</label>
+            <input type="">
+        </p>
 
-      <p>
-        性別：
-        <label><input type="radio" name="gender" value="male"> 男性</label>
-        <label><input type="radio" name="gender" value="female"> 女性</label>
-      </p>
+        <p>
+            性別：<br>
+            <label for="gender-male">
+                <input type="radio" name="gender">男性
+            </label>
+            <label for="gender-female">
+                <input type="radio" name="gender">女性
+            </label>
+        </p>
 
-      <p>
-        興味のある分野：
-        <label><input type="checkbox"value="tech"> 技術</label>
-        <label><input type="checkbox"value="art"> 芸術</label>
-        <label><input type="checkbox"value="science"> 科学</label>
-      </p>
+        <p>
+            興味のある分野：<br>
+            <label for="field">
+                <input type="checkbox" name="field">技術
+            </label>
+            <label for="field">
+                <input type="checkbox" name="field">芸術
+            </label>
+            <label for="field">
+                <input type="checkbox" name="field">科学
+            </label>
+        </p>
 
-      <p>
-        国：
-        <select name="country">
-          <option value="japan">日本</option>
-          <option value="america">アメリカ</option>
-          <option value="uk">イギリス</option>
-        </select>
-      </p>
+        <p>
+            <label for="country">国：</label><br>
+            <select id="country" name="country">
+                <option value="japan">日本</option>
+                <option value="usa">アメリカ</option>
+                <option value="uk">イギリス</option>
+            </select>
+        </p>
 
-      <p>
-        <label>コメント：</label><br>
-        <textarea name="comment" rows="4" cols="50"></textarea>
-      </p>
+        <p>
+            <label for="comment">コメント：</label><br>
+            <textarea id ="comment" name="comment" rows="4" cols="53"></textarea>
+        </p>
 
-      <p>
         <input type="submit" value="送信">
-      </p>
     </form>
   </main>
 
