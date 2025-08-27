@@ -1,0 +1,17 @@
+.menu {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: red;
+    text-decoration: none;
+}
+
+.features li{
+    list-style-type: circle;
+}
+

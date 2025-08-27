@@ -1,0 +1,16 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.page-header {
+    text-align: center;
+    background-image: url('images/okumono_chess40-6.png');
+    background-repeat: none;
+    background-position: center;
+}
+
+.image-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
