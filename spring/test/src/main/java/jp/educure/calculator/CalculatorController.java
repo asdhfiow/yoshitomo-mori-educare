@@ -19,7 +19,6 @@ public class CalculatorController {
 
         int num1, num2;
         try {
-            // ここで負数も正しく処理できる
             num1 = Integer.parseInt(num1Str);
             num2 = Integer.parseInt(num2Str);
         } catch (NumberFormatException e) {
