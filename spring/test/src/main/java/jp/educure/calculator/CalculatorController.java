@@ -11,17 +11,21 @@ public class CalculatorController {
     public String calculate(
             @RequestParam(value = "num1", required = false) String num1Str,
             @RequestParam(value = "num2", required = false) String num2Str) {
-        
+
+        // パラメータ不足チェック
         if (num1Str == null || num2Str == null) {
-            return "エラー：パラメーターが不足しています";
+            return buildErrorHtml("エラー：パラメータが不足しています");
         }
 
-        if (!num1Str.matches("\\d+") || !num2Str.matches("\\d+")) {
-            return "エラー：数値として認識できません";
+        int num1, num2;
+        try {
+            // ここで負数も正しく処理できる
+            num1 = Integer.parseInt(num1Str);
+            num2 = Integer.parseInt(num2Str);
+        } catch (NumberFormatException e) {
+            return buildErrorHtml("エラー：数値として認識できません");
         }
 
-        int num1 = Integer.parseInt(num1Str);
-        int num2 = Integer.parseInt(num2Str);
         int result = num1 + num2;
 
         return """
@@ -40,5 +44,25 @@ public class CalculatorController {
         </body>
         </html>
         """.formatted(num1, num2, result);
+    }
+
+    // エラー時も完全な HTML を返す
+    private String buildErrorHtml(String message) {
+        return """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>計算エラー</title>
+            <style>
+                .error { color: red; font-size: 20px; }
+            </style>
+        </head>
+        <body>
+            <div class="error">
+                %s
+            </div>
+        </body>
+        </html>
+        """.formatted(message);
     }
 }
