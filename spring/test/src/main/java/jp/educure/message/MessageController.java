@@ -1,39 +1,47 @@
 package jp.educure.message;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 import java.time.LocalDateTime;
 
-@RestController
+@Controller
 public class MessageController {
 
-    @GetMapping("/form") // サーバーに対してget（コードの中の処理を画面にただ表示するだけ）するメソッドを送って、サーバーにHTMLを生成してもって、画面に表示する。
+    @GetMapping("/form")
     public String showForm() {
-        return """
-        <!DOCTYPE html>
-        <html>
-        <head><title>Message Form</title></head>
-        <body>
-            <form action="/message" method="post">
-                Message: <input type="text" name="message"><br>
-                Color: <input type="text" name="color"><br>
-                <input type="submit" value="Send">
-            </form>
-        </body>
-        </html>
-        """;
+        return "form"; // resources/templates/form.html を探しに行く
     }
 
-    @PostMapping("/message") // ブラウザで入力したテキストの値をサーバーに送って、受け取ったデータを元にHTMLを生成してもらって画面に表示する
-    public String postMessage(@RequestParam(value="message", defaultValue="No Message Provided") String message,
-                              @RequestParam(value="color", defaultValue="black") String color) {
+    @PostMapping("/message")
+    @ResponseBody
+    public String postMessage(
+            @RequestParam(value = "message", required = false) String message,
+            @RequestParam(value = "color", required = false) String color) {
+
+        // message が空の場合
+        if (message == null || message.trim().isEmpty()) {
+            message = "No message provided";
+        }
+
+        // color が空の場合
+        if (color == null || color.trim().isEmpty()) {
+            color = "black";
+        }
+
         String now = LocalDateTime.now().toString();
+
         return """
         <!DOCTYPE html>
         <html>
-        <head><title>Message Board</title></head>
+        <head>
+            <title>Message Board</title>
+        </head>
         <body>
             <h1>Message Board</h1>
-            <div style="color:%s; font-size:20px; padding:10px; border:1px solid black;">%s</div>
+            <div style="color: %s; font-size: 20px; padding: 10px; border: 1px solid black;">
+                %s
+            </div>
             <p>Posted at: %s</p>
         </body>
         </html>
