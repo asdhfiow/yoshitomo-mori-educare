@@ -24,7 +24,7 @@ public class Main2 implements CommandLineRunner {
             calculatorService.subtract(10, 4);
             calculatorService.multiply(6, 7);
             calculatorService.divide(10, 2);
-        } catch (ArithmeticException | InterruptedException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
