@@ -13,9 +13,9 @@ public class ProductController {
 
     // ハードコードの商品データ
     private List<Product> products = Arrays.asList(
-            new Product(1, "ペン", 1000, "書きやすいペン"),
-            new Product(2, "ノート", 500, "A4サイズのノート"),
-            new Product(3, "消しゴム", 300, "よく消える消しゴム")
+            new Product(1, "ノートPC", 120000, "ハイスペックなノートPC"),
+            new Product(2, "スマートフォン", 80000, "最新モデルスマホ"),
+            new Product(3, "ヘッドフォン", 15000, "ノイズキャンセリング付き")
     );
 
     // 商品一覧ページ
