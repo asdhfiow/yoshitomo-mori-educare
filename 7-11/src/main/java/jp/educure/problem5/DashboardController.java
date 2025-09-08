@@ -13,7 +13,7 @@ public class DashboardController {
     @GetMapping("/dashboard")
     public String showDashboard(Model model) {
         // ユーザー情報
-        Customer customer = new Customer("田中太郎", "taro.tanaka@example.com");
+        Customer customer = new Customer("ユーザー名:山田太郎", "taro.tanaka@example.com");
 
         // 商品リスト
         List<Item> items = Arrays.asList(
