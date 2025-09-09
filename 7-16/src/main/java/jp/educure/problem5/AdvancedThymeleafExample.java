@@ -26,6 +26,7 @@ public class AdvancedThymeleafExample {
         products.add(new Product("Laptop", 1200.0));
         products.add(new Product("smartphone", 800.0));
         products.add(new Product("Tablet", 450.0));
+        
         model.addAttribute("products", products);
         
         return "advanced";
