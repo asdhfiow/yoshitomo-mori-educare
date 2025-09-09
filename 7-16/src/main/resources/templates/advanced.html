@@ -9,7 +9,6 @@
     <p>Name: <span th:text="${user.name}"></span></p>
     <p>Role: <span th:text="${user.role}"></span></p>
 
-    <!-- statusがACTIVEならメッセージ表示 -->
     <p th:if="${user.status} == 'ACTIVE'">User is active</p>
 
     <h1>Products</h1>
