@@ -11,14 +11,13 @@ import java.util.List;
 @Controller
 public class ProductController {
 
-    private final List<Product> productList = new ArrayList<>();
+    // ”リスト”でダミーデータを作成
+  private final List<Product> productList = new ArrayList<>() {{
+    add(new Product(1, "ノートパソコン", 120000));
+    add(new Product(2, "スマートフォン", 80000));
+    add(new Product(3, "イヤホン", 12000));
+}};
 
-    // コンストラクタでダミーデータを作成
-    public ProductController() {
-        productList.add(new Product(1, "ノートパソコン", 120000));
-        productList.add(new Product(2, "スマートフォン", 80000));
-        productList.add(new Product(3, "イヤホン", 12000));
-    }
 
     // 商品一覧
     @GetMapping("/product")
