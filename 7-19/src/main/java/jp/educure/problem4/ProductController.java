@@ -20,7 +20,7 @@ public class ProductController {
 
 
     // 商品一覧
-    @GetMapping("/product")
+    @GetMapping("/products")
     public String listProducts(Model model) {
         model.addAttribute("products", productList);
         return "product-list";
