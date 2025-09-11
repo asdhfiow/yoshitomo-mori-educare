@@ -1,4 +1,4 @@
-package jp.educure.problem3;
+package jp.educure.problem4;
 
 public class Product {
     private int id;
