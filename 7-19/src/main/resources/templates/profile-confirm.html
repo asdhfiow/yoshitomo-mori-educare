@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>編集</title>
+</head>
+<body>
+    <h1>プロフィール編集</h1>
+
+    <p><strong>名前:</strong> ${profileForm.name}</p>
+    <p><strong>年齢:</strong> ${profileForm.age}</p>
+    <p><strong>自己紹介:</strong> ${profileForm.bio}</p>
+
+    <form action="/profile/update" method="POST">
+        <button type="submit">確認</button>
+</body>
+</html>
