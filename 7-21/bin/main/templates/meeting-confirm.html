@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>予約確認</title>
+</head>
+<body>
+<h1>予約内容確認</h1>
+<p>会議室: <span th:text="${form.roomName}"></span></p>
+<p>利用開始: <span th:text="${form.startTime}"></span></p>
+<p>利用終了: <span th:text="${form.endTime}"></span></p>
+<p>利用人数: <span th:text="${form.participants}"></span>人</p>
+
+
+</form>
+</body>
+</html>

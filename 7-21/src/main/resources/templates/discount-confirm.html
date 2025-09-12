@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>キャンペーン確認</title>
+</head>
+<body>
+<h1>キャンペーン確認</h1>
+
+<p>キャンペーン名: <span th:text="${form.campaignName}"></span></p>
+<p>割引種別: <span th:text="${form.discountType}"></span></p>
+<p>割引値: <span th:text="${form.discountValue}"></span></p>
+<p>開始日: <span th:text="${form.startDate}"></span></p>
+<p>終了日: <span th:text="${form.endDate}"></span></p>
+
+</body>
+</html>

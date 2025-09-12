@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>割引キャンペーン入力</title>
+</head>
+<body>
+<h1>割引キャンペーン登録</h1>
+
+<form th:action="@{/discount/confirm}" th:object="${discountCampaignForm}" method="post">
+    <div>
+        <label>キャンペーン名:</label>
+        <input type="text" th:field="*{campaignName}">
+        <div th:if="${#fields.hasErrors('campaignName')}" th:errors="*{campaignName}"></div>
+    </div>
+
+    <div>
+        <label>割引種別:</label>
+        <select th:field="*{discountType}">
+            <option value="">選択してください</option>
+            <option value="定額">定額</option>
+            <option value="定率">定率</option>
+        </select>
+        <div th:if="${#fields.hasErrors('discountType')}" th:errors="*{discountType}"></div>
+    </div>
+
+    <div>
+        <label>割引値:</label>
+        <input type="number" th:field="*{discountValue}">
+        <div th:if="${#fields.hasErrors('discountValue')}" th:errors="*{discountValue}"></div>
+    </div>
+
+    <div>
+        <label>開始日:</label>
+        <input type="date" th:field="*{startDate}">
+        <div th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></div>
+    </div>
+
+    <div>
+        <label>終了日:</label>
+        <input type="date" th:field="*{endDate}">
+        <div th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></div>
+    </div>
+
+    <button type="submit">確認</button>
+</form>
+</body>
+</html>

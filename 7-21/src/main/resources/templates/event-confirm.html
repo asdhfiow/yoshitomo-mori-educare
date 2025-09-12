@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>イベント申し込み期間確認</title>
+</head>
+<body>
+<h2>イベント申し込み期間確認</h2>
+<p>開始日：<span th:text="${startDate}"></span></p>
+<p>終了日：<span th:text="${endDate}"></span></p>
+
+<a th:href="@{/event/input}"><button>修正する</button></a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>在庫入力</title>
+</head>
+<body>
+    <h1>在庫入力フォーム</h1>
+
+    <form th:action="@{/stock/confirm}" th:object="${productStockForm}" method="post">
+        <div>
+            <label>在庫数：</label>
+            <input type="number" th:field="*{stock}">
+        </div>
+
+        <div th:if="${#fields.hasErrors('stock')}">
+            <p th:errors="*{stock}"></p>
+        </div>
+
+        <div>
+            <button type="submit">確認</button>
+        </div>
+    </form>
+</body>
+</html>
