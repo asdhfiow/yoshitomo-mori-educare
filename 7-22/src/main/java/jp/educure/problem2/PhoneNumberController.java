@@ -18,9 +18,9 @@ public class PhoneNumberController {
     @PostMapping("/phone/confirm")
     public String confirm(@Valid PhoneNumberForm form, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "phone-input"; 
+            return "phone-input";
         }
         model.addAttribute("phoneNumber", form.getPhoneNumber());
-        return "phone-confirm";  
+        return "phone-confirm";
     }
 }
